@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_iosskyseaappautomation" default="compile.module.iosskyseaappautomation">
+  <dirname property="module.iosskyseaappautomation.basedir" file="${ant.file.module_iosskyseaappautomation}"/>
+  
+  <property name="module.jdk.home.iosskyseaappautomation" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.iosskyseaappautomation" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.iosskyseaappautomation" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.iosskyseaappautomation" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="iosskyseaappautomation.output.dir" value="${module.iosskyseaappautomation.basedir}/target/classes"/>
+  <property name="iosskyseaappautomation.testoutput.dir" value="${module.iosskyseaappautomation.basedir}/target/test-classes"/>
+  
+  <path id="iosskyseaappautomation.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="iosskyseaappautomation.module.production.classpath">
+    <path refid="${module.jdk.classpath.iosskyseaappautomation}"/>
+    <path refid="library.java.classpath"/>
+    <path refid="library.commons-exec-1.2.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.ant-antlr.classpath"/>
+    <path refid="library.rt.classpath"/>
+    <path refid="library.github.classpath"/>
+    <path refid="library.ant-jps-plugin.classpath"/>
+    <path refid="library.jcommander.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.12.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:2.0.classpath"/>
+    <path refid="library.io.appium:java-client:1.3.0.classpath"/>
+    <path refid="library.mysql:mysql-connector-java:5.1.40.classpath"/>
+  </path>
+  
+  <path id="iosskyseaappautomation.runtime.production.module.classpath">
+    <pathelement location="${iosskyseaappautomation.output.dir}"/>
+    <path refid="library.java.classpath"/>
+    <path refid="library.commons-exec-1.2.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.ant-antlr.classpath"/>
+    <path refid="library.rt.classpath"/>
+    <path refid="library.github.classpath"/>
+    <path refid="library.ant-jps-plugin.classpath"/>
+    <path refid="library.jcommander.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.12.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:2.0.classpath"/>
+    <path refid="library.io.appium:java-client:1.3.0.classpath"/>
+    <path refid="library.mysql:mysql-connector-java:5.1.40.classpath"/>
+  </path>
+  
+  <path id="iosskyseaappautomation.module.classpath">
+    <path refid="${module.jdk.classpath.iosskyseaappautomation}"/>
+    <pathelement location="${iosskyseaappautomation.output.dir}"/>
+    <path refid="library.java.classpath"/>
+    <path refid="library.commons-exec-1.2.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.ant-antlr.classpath"/>
+    <path refid="library.rt.classpath"/>
+    <path refid="library.github.classpath"/>
+    <path refid="library.ant-jps-plugin.classpath"/>
+    <path refid="library.jcommander.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.12.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:2.0.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.testng:testng:5.14.6.classpath"/>
+    <path refid="library.io.appium:java-client:1.3.0.classpath"/>
+    <path refid="library.mysql:mysql-connector-java:5.1.40.classpath"/>
+  </path>
+  
+  <path id="iosskyseaappautomation.runtime.module.classpath">
+    <pathelement location="${iosskyseaappautomation.testoutput.dir}"/>
+    <pathelement location="${iosskyseaappautomation.output.dir}"/>
+    <path refid="library.java.classpath"/>
+    <path refid="library.commons-exec-1.2.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.ant-antlr.classpath"/>
+    <path refid="library.rt.classpath"/>
+    <path refid="library.github.classpath"/>
+    <path refid="library.ant-jps-plugin.classpath"/>
+    <path refid="library.jcommander.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.12.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:2.0.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_org.testng:testng:5.14.6.classpath"/>
+    <path refid="library.io.appium:java-client:1.3.0.classpath"/>
+    <path refid="library.mysql:mysql-connector-java:5.1.40.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.iosskyseaappautomation">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.iosskyseaappautomation">
+    <patternset refid="excluded.from.module.iosskyseaappautomation"/>
+  </patternset>
+  
+  <path id="iosskyseaappautomation.module.sourcepath">
+    <dirset dir="${module.iosskyseaappautomation.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="iosskyseaappautomation.module.test.sourcepath">
+    <dirset dir="${module.iosskyseaappautomation.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.iosskyseaappautomation" depends="compile.module.iosskyseaappautomation.production,compile.module.iosskyseaappautomation.tests" description="Compile module iosSkyseaAppAutomation"/>
+  
+  <target name="compile.module.iosskyseaappautomation.production" depends="register.custom.compilers" description="Compile module iosSkyseaAppAutomation; production classes">
+    <mkdir dir="${iosskyseaappautomation.output.dir}"/>
+    <javac2 destdir="${iosskyseaappautomation.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.iosskyseaappautomation}/javac">
+      <compilerarg line="${compiler.args.iosskyseaappautomation}"/>
+      <bootclasspath refid="iosskyseaappautomation.module.bootclasspath"/>
+      <classpath refid="iosskyseaappautomation.module.production.classpath"/>
+      <src refid="iosskyseaappautomation.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.iosskyseaappautomation"/>
+    </javac2>
+    
+    <copy todir="${iosskyseaappautomation.output.dir}">
+      <fileset dir="${module.iosskyseaappautomation.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.iosskyseaappautomation.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.iosskyseaappautomation.tests" depends="register.custom.compilers,compile.module.iosskyseaappautomation.production" description="compile module iosSkyseaAppAutomation; test classes" unless="skip.tests">
+    <mkdir dir="${iosskyseaappautomation.testoutput.dir}"/>
+    <javac2 destdir="${iosskyseaappautomation.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.iosskyseaappautomation}/javac">
+      <compilerarg line="${compiler.args.iosskyseaappautomation}"/>
+      <bootclasspath refid="iosskyseaappautomation.module.bootclasspath"/>
+      <classpath refid="iosskyseaappautomation.module.classpath"/>
+      <src refid="iosskyseaappautomation.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.iosskyseaappautomation"/>
+    </javac2>
+    
+    <copy todir="${iosskyseaappautomation.testoutput.dir}">
+      <fileset dir="${module.iosskyseaappautomation.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.iosskyseaappautomation" description="cleanup module">
+    <delete dir="${iosskyseaappautomation.output.dir}"/>
+    <delete dir="${iosskyseaappautomation.testoutput.dir}"/>
+  </target>
+</project>

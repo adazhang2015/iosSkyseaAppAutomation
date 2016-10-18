@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="commons-exec-1.2">
+    <CLASSES>
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/commons-exec-1.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/httpclient-4.3.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/httpcore-4.3.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/json-20140107.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/phantomjsdriver-1.1.0.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/selenium-api-2.42.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/selenium-java-2.42.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/selenium-remote-driver-2.42.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/selenium-server-2.42.2.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/selenium_idea_plugin.jar!/" />
+      <root url="jar://$APPLICATION_PLUGINS_DIR$/selenium_idea_plugin/lib/testng-6.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/selenium-remote-driver-2.42.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
