@@ -1,0 +1,272 @@
+<?xml version= "1.0"  encoding ="UTF-8"?>
+<project name= "SkySeaAppTest" default ="run" basedir=".">
+    <property file="build.properties"/>
+
+    <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+    <path id="jdk.classpath.1.8">
+        <fileset dir="${jdk.home.1.8}">
+            <include name="jre/lib/charsets.jar"/>
+            <include name="jre/lib/deploy.jar"/>
+            <include name="jre/lib/ext/cldrdata.jar"/>
+            <include name="jre/lib/ext/dnsns.jar"/>
+            <include name="jre/lib/ext/jaccess.jar"/>
+            <include name="jre/lib/ext/jfxrt.jar"/>
+            <include name="jre/lib/ext/localedata.jar"/>
+            <include name="jre/lib/ext/nashorn.jar"/>
+            <include name="jre/lib/ext/sunec.jar"/>
+            <include name="jre/lib/ext/sunjce_provider.jar"/>
+            <include name="jre/lib/ext/sunpkcs11.jar"/>
+            <include name="jre/lib/ext/zipfs.jar"/>
+            <include name="jre/lib/javaws.jar"/>
+            <include name="jre/lib/jce.jar"/>
+            <include name="jre/lib/jfr.jar"/>
+            <include name="jre/lib/jfxswt.jar"/>
+            <include name="jre/lib/jsse.jar"/>
+            <include name="jre/lib/management-agent.jar"/>
+            <include name="jre/lib/plugin.jar"/>
+            <include name="jre/lib/resources.jar"/>
+            <include name="jre/lib/rt.jar"/>
+            <include name="lib/ant-javafx.jar"/>
+            <include name="lib/dt.jar"/>
+            <include name="lib/javafx-mx.jar"/>
+            <include name="lib/jconsole.jar"/>
+            <include name="lib/packager.jar"/>
+            <include name="lib/sa-jdi.jar"/>
+            <include name="lib/tools.jar"/>
+        </fileset>
+    </path>
+    <patternset id="ignored.files">
+        <exclude name="**/*.hprof/**"/>
+        <exclude name="**/*.pyc/**"/>
+        <exclude name="**/*.pyo/**"/>
+        <exclude name="**/*.rbc/**"/>
+        <exclude name="**/*.yarb/**"/>
+        <exclude name="**/*~/**"/>
+        <exclude name="**/.DS_Store/**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name="**/.hg/**"/>
+        <exclude name="**/.svn/**"/>
+        <exclude name="**/CVS/**"/>
+        <exclude name="**/RCS/**"/>
+        <exclude name="**/SCCS/**"/>
+        <exclude name="**/__pycache__/**"/>
+        <exclude name="**/_svn/**"/>
+        <exclude name="**/rcs/**"/>
+        <exclude name="**/vssver.scc/**"/>
+        <exclude name="**/vssver2.scc/**"/>
+    </patternset>
+    <patternset id="library.patterns">
+        <include name="*.war"/>
+        <include name="*.swc"/>
+        <include name="*.apk"/>
+        <include name="*.zip"/>
+        <include name="*.egg"/>
+        <include name="*.ane"/>
+        <include name="*.jar"/>
+        <include name="*.ear"/>
+    </patternset>
+    <patternset id="compiler.resources">
+        <exclude name="**/?*.java"/>
+        <exclude name="**/?*.form"/>
+        <exclude name="**/?*.class"/>
+        <exclude name="**/?*.groovy"/>
+        <exclude name="**/?*.scala"/>
+        <exclude name="**/?*.flex"/>
+        <exclude name="**/?*.kt"/>
+        <exclude name="**/?*.clj"/>
+        <exclude name="**/?*.aj"/>
+    </patternset>
+    <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+    <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+    <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+    <property name="javac2.home" value="${idea.home}/lib"/>
+    <echo   message="Start SkySeaAppTest" />
+    <echo   message="import libs" />
+    <path id="run.classpath">
+        <pathelement location="${path.variable.maven_repository}/org/testng/testng/5.14.6/testng-5.14.6.jar"/>
+        <pathelement location="${path.variable.maven_repository}/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar"/>
+        <pathelement location="${path.variable.maven_repository}/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar"/>
+        <pathelement location="${path.variable.maven_repository}/com/google/guava/guava/17.0/guava-17.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
+        <pathelement location="${path.variable.maven_repository}/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+        <pathelement location="${path.variable.maven_repository}/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar"/>
+        <pathelement location="${path.variable.maven_repository}/io/appium/java-client/1.3.0/java-client-1.3.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar"/>
+        <pathelement location="${path.variable.maven_repository}/junit/junit/4.11/junit-4.11.jar"/>
+        <pathelement location="${path.variable.maven_repository}/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/net/sourceforge/cssparser/cssparser/0.9.13/cssparser-0.9.13.jar"/>
+        <pathelement location="${path.variable.maven_repository}/net/sourceforge/htmlunit/htmlunit-core-js/2.14/htmlunit-core-js-2.14.jar"/>
+        <pathelement location="${path.variable.maven_repository}/net/sourceforge/htmlunit/htmlunit/2.14/htmlunit-2.14.jar"/>
+        <pathelement location="${path.variable.maven_repository}/net/sourceforge/nekohtml/nekohtml/1.9.20/nekohtml-1.9.20.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-lang3/3.2.1/commons-lang3-3.2.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/apache/httpcomponents/httpmime/4.3.2/httpmime-4.3.2.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/eclipse/jetty/jetty-http/8.1.14.v20131031/jetty-http-8.1.14.v20131031.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/eclipse/jetty/jetty-io/8.1.14.v20131031/jetty-io-8.1.14.v20131031.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/eclipse/jetty/jetty-util/8.1.14.v20131031/jetty-util-8.1.14.v20131031.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/eclipse/jetty/jetty-websocket/8.1.14.v20131031/jetty-websocket-8.1.14.v20131031.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/json/json/20080701/json-20080701.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-api/2.42.1/selenium-api-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-chrome-driver/2.42.1/selenium-chrome-driver-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-firefox-driver/2.42.1/selenium-firefox-driver-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-htmlunit-driver/2.42.1/selenium-htmlunit-driver-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-ie-driver/2.42.1/selenium-ie-driver-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-java/2.42.1/selenium-java-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-remote-driver/2.42.1/selenium-remote-driver-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-safari-driver/2.42.1/selenium-safari-driver-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/seleniumhq/selenium/selenium-support/2.42.1/selenium-support-2.42.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/w3c/css/sac/1.3/sac-1.3.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar"/>
+        <pathelement location="${path.variable.maven_repository}/xalan/serializer/2.7.1/serializer-2.7.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/xalan/xalan/2.7.1/xalan-2.7.1.jar"/>
+        <pathelement location="${path.variable.maven_repository}/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar"/>
+
+        <pathelement location="${idea.home}/lib/ant/lib/ant-antlr.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-bcel.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-bsf.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-log4j.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-oro.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-regexp.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-resolver.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-apache-xalan2.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-commons-logging.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-commons-net.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-jai.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-javamail.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-jdepend.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-jmf.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-jsch.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-junit.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-junit4.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-launcher.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-netrexx.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-swing.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant-testutil.jar"/>
+        <pathelement location="${idea.home}/lib/ant/lib/ant.jar"/>
+        <fileset dir="${jdk.home.1.8}">
+            <include name="jre/lib/charsets.jar"/>
+            <include name="jre/lib/deploy.jar"/>
+            <include name="jre/lib/ext/cldrdata.jar"/>
+            <include name="jre/lib/ext/dnsns.jar"/>
+            <include name="jre/lib/ext/jaccess.jar"/>
+            <include name="jre/lib/ext/jfxrt.jar"/>
+            <include name="jre/lib/ext/localedata.jar"/>
+            <include name="jre/lib/ext/nashorn.jar"/>
+            <include name="jre/lib/ext/sunec.jar"/>
+            <include name="jre/lib/ext/sunjce_provider.jar"/>
+            <include name="jre/lib/ext/sunpkcs11.jar"/>
+            <include name="jre/lib/ext/zipfs.jar"/>
+            <include name="jre/lib/javaws.jar"/>
+            <include name="jre/lib/jce.jar"/>
+            <include name="jre/lib/jfr.jar"/>
+            <include name="jre/lib/jfxswt.jar"/>
+            <include name="jre/lib/jsse.jar"/>
+            <include name="jre/lib/management-agent.jar"/>
+            <include name="jre/lib/plugin.jar"/>
+            <include name="jre/lib/resources.jar"/>
+            <include name="jre/lib/rt.jar"/>
+            <include name="lib/ant-javafx.jar"/>
+            <include name="lib/dt.jar"/>
+            <include name="lib/javafx-mx.jar"/>
+            <include name="lib/jconsole.jar"/>
+            <include name="lib/packager.jar"/>
+            <include name="lib/sa-jdi.jar"/>
+            <include name="lib/tools.jar"/>
+        </fileset>
+        <pathelement location="${idea.home}/plugins/ant/lib/ant-jps-plugin.jar"/>
+        <pathelement location="${idea.home}/plugins/ant/lib/antIntegration.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/commons-exec-1.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/httpclient-4.3.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/httpcore-4.3.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/json-20140107.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/phantomjsdriver-1.1.0.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/selenium-api-2.42.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/selenium-java-2.42.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/selenium-remote-driver-2.42.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/selenium-server-2.42.2.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/selenium_idea_plugin.jar"/>
+        <pathelement location="${basedir}/../../Library/Application Support/IntelliJIdea2016.2/selenium_idea_plugin/lib/testng-6.8.jar"/>
+
+        <pathelement location="${idea.home}/plugins/github/lib/github.jar"/>
+
+        <pathelement location="${idea.home}/plugins/testng/lib/jcommander.jar"/>
+        <pathelement location="${idea.home}/plugins/testng/lib/testng-plugin.jar"/>
+        <pathelement location="${idea.home}/plugins/testng/lib/testng.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/testng/testng/5.14.6/testng-5.14.6.jar"/>
+        <pathelement location="${path.variable.maven_repository}/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar"/>
+        <fileset dir="${basedir}/../../../../Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/lib">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <pathelement location="${path.variable.maven_repository}/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/com/beust/jcommander/1.12/jcommander-1.12.jar"/>
+        <pathelement location="${path.variable.maven_repository}/com/google/inject/guice/2.0/guice-2.0.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar"/>
+        <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+        <fileset dir="${idea.home}/lib/rt">
+            <patternset refid="library.patterns"/>
+        </fileset>
+        <pathelement location="${javac2.home}/javac2.jar"/>
+        <pathelement location="${javac2.home}/jdom.jar"/>
+        <pathelement location="${javac2.home}/asm-all.jar"/>
+        <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+
+    </path >
+
+
+    <dirname property="module.iosskyseaappautomation.basedir" file="${ant.file}"/>
+    <property name="iosskyseaappautomation.output.dir" value="${module.iosskyseaappautomation.basedir}/target/classes"/>
+    <property name="iosskyseaappautomation.testoutput.dir" value="${module.iosskyseaappautomation.basedir}/target/test-classes"/>
+    <path id="iosskyseaappautomation.module.sourcepath">
+        <dirset dir="${module.iosskyseaappautomation.basedir}">
+            <include name="src/main/java"/>
+            <include name="src/main/resources"/>
+        </dirset>
+    </path>
+    <path id="iosskyseaappautomation.module.test.sourcepath">
+        <dirset dir="${module.iosskyseaappautomation.basedir}">
+            <include name="src/test/java"/>
+        </dirset>
+    </path>
+
+
+    <target name="register.custom.compilers">
+        <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="run.classpath"/>
+        <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="run.classpath"/>
+    </target>
+    <taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="run.classpath" />
+    <target name="clean">
+        <delete dir= "build"/>
+    </target >
+    <target name="compile" depends= "clean">
+        <echo message= "mkdir"/>
+        <mkdir dir= "build/classes"/>
+        <javac srcdir= "src" destdir ="build/classes" debug= "on" encoding ="UTF-8">
+            <classpath refid= "run.classpath"/>
+        </javac>
+        <copy todir= "build/classes">
+            <fileset dir= "${basedir}/src/main/resources">
+                <include name= "**/dbconfig.properties" />
+            </fileset>
+        </copy >
+    </target >
+    <path id="runpath">
+        <path refid= "run.classpath"/>
+        <pathelement location= "build/classes"/>
+    </path >
+
+    <target name= "run" depends ="compile">
+        <testng  classpathref="runpath"   outputDir="test-output">
+            <xmlfileset dir= "${basedir}" includes ="testng.xml"/>
+            <jvmarg value= "-Dfile.encoding=UTF-8" />
+        </testng>
+    </target >
+
+</project>
+
+

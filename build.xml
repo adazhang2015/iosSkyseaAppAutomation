@@ -250,7 +250,7 @@
       <classpath refid= "run.classpath"/>
     </javac>
     <copy todir= "build/classes">
-      <fileset dir= "${basedir}/src">
+      <fileset dir= "${basedir}/src/main/resources">
         <include name= "**/dbconfig.properties" />
       </fileset>
     </copy >
